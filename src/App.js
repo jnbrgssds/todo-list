@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import background from './assets/bg3.jpg';
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -18,9 +19,9 @@ function App() {
   };
 
   return (
-    <div className="bg-stone-950 min-h-screen flex items-center justify-center">
-      <div className="bg-stone-600 shadow-lg rounded-lg p-6 w-96">
-        <h1 className="text-2xl font-bold text-center mb-4">Lista de Tarefas</h1>
+    <div className="min-h-screen flex items-center justify-center bg-cover bg-center"  style={{ backgroundImage: `url(${background})` }}>
+      <div className="bg-slate-900 bg-opacity-80 shadow-lg rounded-lg p-6 w-96">
+        <h1 className="text-2xl font-bold text-white text-center mb-4 font-lora">Lista de Tarefas</h1>
         <div className="mb-4">
           <input
             type="text"
@@ -31,18 +32,18 @@ function App() {
           />
           <button
             onClick={addTask}
-            className="bg-amber-800 text-white px-4 py-2 rounded w-full hover:bg-blue-600"
+            className="bg-rose-700 text-white px-4 py-2 rounded w-full hover:bg-rose-600 font-lora"
           >
             Adicionar
           </button>
         </div>
         <ul className="space-y-2">
           {tasks.map((t, index) => (
-            <li key={index} className="bg-gray-200 p-2 rounded flex justify-between">
+            <li key={index} className="bg-gray-200 p-2 rounded flex justify-between font-bold font-lora">
               {t}
               <button
                 onClick={() => removeTask(index)}
-                className="text-red-500 hover:text-red-700"
+                className="text-red-500 font-bold hover:text-red-700 font-lora"
               >
                 Remover
               </button>
